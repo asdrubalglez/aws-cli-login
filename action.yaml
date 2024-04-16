@@ -1,0 +1,46 @@
+# name: "AWS Command Line Interface"
+# description: "GitHub Action with the latest AWS CLI in Docker, enabling execution of AWS CLI commands."
+#
+# runs:
+#   using: "docker"
+#   image: "docker://drugp/aws-cli:latest"
+#
+# inputs:
+#   args:
+#     description: "The arguments to pass to the AWS CLI command."
+#     required: false
+#     default: ""
+#
+# outputs:
+#   GITHUB_OUTPUT:
+#     description: "The stdout of the AWS CLI command."
+#
+# branding:
+#   icon: "terminal"
+#   color: "orange"
+#
+name: "AWS Command Line Interface"
+description: "GitHub Action with the latest AWS CLI in Docker, enabling execution of AWS CLI commands."
+
+runs:
+  using: "docker"
+  image: "docker://drugp/aws-cli-alpine:latest"
+
+inputs:
+  args:
+    description: "The arguments to pass to the AWS CLI command."
+    required: false
+    default: ""
+
+  ignore-errors:
+    description: "Option to ignore errors and continue execution."
+    required: false
+    # The default is set to false, meaning errors will not be ignored by default.
+
+outputs:
+  GITHUB_OUTPUT:
+    description: "The stdout of the AWS CLI command."
+
+branding:
+  icon: "terminal"
+  color: "orange"
